@@ -1,0 +1,22 @@
+apiVersion: trustyai.opendatahub.io/v1alpha1
+kind: NemoGuardrails
+metadata:
+  annotations:
+    security.opendatahub.io/enable-auth: "true"
+  name: nemo-selfcheck
+spec:
+  env:
+    - name: OPENAI_API_KEY
+      valueFrom:
+        secretKeyRef:
+          key: token
+          name: api-token-secret
+    - name: MAIN_MODEL_BASE_URL
+      value: "https://$YOUR_ENDPOINT/v1"
+    - name: MAIN_MODEL_ENGINE
+      value: "vllm"
+  nemoConfigs:
+    - configMaps:
+        - nemo-selfcheck-config
+      name: nemo-selfcheck-config
+  replicas: 1
