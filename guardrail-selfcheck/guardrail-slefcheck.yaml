@@ -14,7 +14,7 @@ spec:
     - name: MAIN_MODEL_BASE_URL
       value: "https://$YOUR_ENDPOINT/v1"
     - name: MAIN_MODEL_ENGINE
-      value: "vllm"
+      value: "openai"
   nemoConfigs:
     - configMaps:
         - nemo-selfcheck-config

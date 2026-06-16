@@ -31,3 +31,5 @@ data:
           - mask sensitive data on output
   rails.co: |
     # Using built-in sensitive data detection rails
+    define bot refuse to respond
+      "申し訳ありません。その質問に回答することはできません。"
